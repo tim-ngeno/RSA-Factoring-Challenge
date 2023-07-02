@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+import sys
+
+
+def factorize(n):
+    """Returns the value of n as a factor of its divisors"""
+    i = 2
+    if n < 2:
+        return
+    while (n % i):
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(n, n / i, i))
+
+
+if len(sys.argv) != 2:
+    exit()
+
+with open(sys.argv[1], "r") as file:
+    content = file.read()
+
+    as_list = content.split()
+    for item in as_list:
+        countt(int(item))
