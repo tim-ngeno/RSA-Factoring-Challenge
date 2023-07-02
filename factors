@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""factorize numbers into a product of two smaller numbers"""
 import sys
 
 
@@ -15,9 +16,11 @@ def factorize(n):
 if len(sys.argv) != 2:
     exit()
 
-with open(sys.argv[1], "r") as file:
-    content = file.read()
-
-    as_list = content.split()
-    for item in as_list:
-        countt(int(item))
+try:
+    with open(sys.argv[1], "r") as file:
+        content = file.read()
+        as_list = content.split()
+        for item in as_list:
+            factorize(int(item))
+except Exception:
+    pass
